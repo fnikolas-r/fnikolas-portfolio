@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Sandbox (This folder i use for experimental purpose)
+*/sandbox
