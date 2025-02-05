@@ -26,22 +26,19 @@ export default function Hero() {
 
   return (
     <section className="min-h-screen w-full flex flex-col relative">
-      <div className="md:pt-12 w-full md:items-start sm:mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3">
-        <p className="sm:text-2xl font-medium text-white text-center md:text-left font-generalsans">
-          <p className="text3xl">
+      <div className="md:pt-16 w-full md:items-start sm:mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3">
+        <p className="font-medium text-white text-center md:text-left font-generalsans">
+          <p className="">
             Hello, My Name is Fernando <span className="waving-hand">👋</span>
           </p>
-          <p className="md:text-left hero_tag  max-w-xl">
-            I Do{" "}
+          <p className="md:text-left hero_tag max-w-xl">
+            I Build{" "}
             <span className="highlight highlight-variant-12 after:bg-gradient-to-tr after:from-amber-500 after:to-sky-500">
-              Software
+              Products 
             </span>
-            <span className=" highlight highlight-variant-1 after:bg-gradient-to-tr after:from-red-600 after:to-black-100">
-              Machine Learning
-            </span>
-            and{" "}
+            &nbsp;and{" "}Design&nbsp;
             <span className="highlight highlight-variant-15 after:bg-gradient-to-tr after:from-green-600 after:to-blue-500-100">
-              Network
+              Infrastructure
             </span>
           </p>
         </p>
