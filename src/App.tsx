@@ -1,4 +1,5 @@
 import About from "./section/About";
+import EducationAndExperience from "./section/Experience";
 import Hero from "./section/Hero";
 import Navbar from "./section/Navbar";
 import Projects from "./section/Projects";
@@ -12,6 +13,7 @@ export default function App() {
       <About/>
       <Skills/>
       <Projects/>
+      <EducationAndExperience/>
     </h1>
   </main>
 }
