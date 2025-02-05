@@ -68,9 +68,9 @@ function Skills() {
             setDuration(FAST_DURATION);
           }}
         >
-          {data.map((tech) => (
+          {data.map((tech,index) => (
             <TechIcon
-              key={tech.id}
+              key={index}
               name={tech.name}
               source={tech.source}
               isSourceFromInternet={tech.isSourceFromInternet}
