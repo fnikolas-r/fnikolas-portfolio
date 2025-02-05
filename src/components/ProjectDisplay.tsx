@@ -39,7 +39,7 @@ function ProjectDisplay(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials, animations } = useGLTF('/models_3d/computer.glb') as GLTFResult
   // const { actions } = useAnimations<GLTFActions>(animations, group)
 
-  const txt = useTexture("/image/projects/project1.png",(texture)=>{
+  const txt = useTexture("/image/projects/test-image.png",(texture)=>{
     texture.center = new THREE.Vector2(0.5, 0.5);
     // texture.rotation = Math.PI;
     texture.flipY = false;
