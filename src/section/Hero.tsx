@@ -11,18 +11,20 @@ import {
   extraWidthScreen,
   smallWidthScreen,
 } from "../constants";
-import { useMediaQuery } from "../hooks/useMediaQuery";
 import RobotsCamera from "../components/RobotsCamera";
+import { useMediaQuery } from "react-responsive";
 
 export default function Hero() {
   const isWindowMobile = useMediaQuery({ maxWidth: 768 });
-  const isWindowTablet = useMediaQuery({ maxWidth: 1024, minWidth: 768 });
+  const isWindowTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024});
+  const isWindowLarge = useMediaQuery({ minWidth: 1024});
 
-  const modelGeometry = isWindowMobile
-    ? smallWidthScreen
-    : isWindowTablet
+  const modelGeometry = isWindowLarge ? 
+  extraWidthScreen :
+  isWindowTablet
     ? mediumWidthScreen
-    : extraWidthScreen;
+    : isWindowMobile
+
 
   return (
     <section className="min-h-screen w-full flex flex-col relative">

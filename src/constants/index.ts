@@ -40,12 +40,12 @@ export const extraWidthScreen: modelMetadata = {
   scale: 6.5,
 };
 export const mediumWidthScreen: modelMetadata = {
-  position: [-1, -11.6, -6.3],
-  rotation: [0, 0.7, 0],
-  scale: 6.5,
+  position: [17.6,-14.8, -8.4],
+  rotation: [0, 0, 0],
+  scale: 5.4,
 };
 export const smallWidthScreen: modelMetadata = {
   position: [0, -8.6, 3.7],
   rotation: [0, 6.5, 0],
-  scale: 3.9,
+  scale: 4,
 };
