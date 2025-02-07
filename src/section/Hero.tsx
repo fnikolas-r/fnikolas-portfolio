@@ -23,13 +23,13 @@ export default function Hero() {
   extraWidthScreen :
   isWindowTablet
     ? mediumWidthScreen
-    : isWindowMobile
+    : smallWidthScreen
 
 
   return (
     <section className="min-h-screen w-full flex flex-col relative">
       <div className="md:pt-16 w-full md:items-start sm:mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3">
-        <p className="font-medium text-white text-center md:text-left font-generalsans">
+        <div className="font-medium text-white text-center md:text-left font-generalsans">
           <p className="">
             Hello, My Name is Fernando <span className="waving-hand">👋</span>
           </p>
@@ -43,7 +43,7 @@ export default function Hero() {
               Infrastructure
             </span>
           </p>
-        </p>
+        </div>
 
         <div className="w-full h-full absolute inset-0">
           <Canvas className="w-full h-full">
