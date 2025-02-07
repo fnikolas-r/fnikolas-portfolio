@@ -6,7 +6,7 @@ const EducationAndExperience = () => {
   const [animationName, setAnimationName] = useState('idle');
 
   return (
-    <section className="c-space my-20" id="work">
+    <section className="c-space my-20" id="experience">
       <div className="w-full text-white-600 text-base">
         <p className="head-text">Education & Experience</p>
 

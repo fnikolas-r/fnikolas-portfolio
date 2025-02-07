@@ -27,7 +27,7 @@ export default function Hero() {
 
 
   return (
-    <section className="min-h-screen w-full flex flex-col relative">
+    <section className="min-h-screen w-full flex flex-col relative" id="home">
       <div className="md:pt-16 w-full md:items-start sm:mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3">
         <div className="font-medium text-white text-center md:text-left font-generalsans">
           <p className="">

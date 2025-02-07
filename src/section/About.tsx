@@ -20,7 +20,7 @@ function About() {
   const contactTest: IconProp[] = [faLinkedin, faInstagram, faGithub, faWordpress, faTelegram];
 
   return (
-    <section className="c-space my-20" id={"#about"}>
+    <section className="c-space my-20" id={"about"}>
       <div className="grid xl:grid-cols-3 xl:grid-rows-2 md:grid-cols-2 grid-cols-1 gap-5 h-full">
         {/* Profile Photo */}
         <div className="col-span-1 xl:row-span-2">
