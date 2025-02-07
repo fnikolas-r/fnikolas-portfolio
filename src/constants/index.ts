@@ -24,8 +24,8 @@ export const navLinks: navLinkType[] = [
   },
   {
     id: 3,
-    name: "Work",
-    href: "#work",
+    name: "Experience",
+    href: "#experience",
   },
   {
     id: 4,
@@ -49,3 +49,8 @@ export const smallWidthScreen: modelMetadata = {
   rotation: [0, 6.5, 0],
   scale: 4,
 };
+
+
+
+const TB_SHOWCASE_URI = "/api/v2/tables/m1adxmbftzrglvu/"
+export const API_URL = {TB_SHOWCASE_URI}
