@@ -29,6 +29,11 @@ export const navLinks: navLinkType[] = [
   },
   {
     id: 4,
+    name: "Blog",
+    href: "",
+  },
+  {
+    id: 5,
     name: "Contact",
     href: "#contact",
   },

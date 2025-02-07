@@ -4,9 +4,22 @@ import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import { navLinks } from "../constants";
 
-const NavItems = () => {
+const NavItems = ({ isSmall }: { isSmall?: boolean }) => {
   return (
     <ul className="nav-ul">
+      {isSmall ? (
+        <>
+          {" "}
+          <li className="nav-li">
+            <button className="text-base ">
+              Let’s Get Started – Here’s My CV! 📄
+            </button>
+            <hr className="h-px bg-gray-200 border-0 dark:bg-gray-700"/>
+          </li>
+        </>
+      ) : (
+        <></>
+      )}
       {navLinks.map(({ id, href, name }) => (
         <li key={id} className="nav-li">
           <a href={href} className="nav-li_a">
@@ -38,15 +51,15 @@ export default function Navbar() {
             aria-label="Toogle Menu"
             onClick={toogleBar}
           >
-            <FontAwesomeIcon icon={isOpen ? faX : faBars} className="w-6 h-6"/>
+            <FontAwesomeIcon icon={isOpen ? faX : faBars} className="w-6 h-6" />
           </button>
-            <nav className="sm:flex hidden">
-                <NavItems/>
-            </nav>
+          <nav className="sm:flex hidden">
+            <NavItems />
+          </nav>
         </div>
       </div>
-      <div className={`nav-sidebar ${isOpen? 'max-h-screen' : 'max-h-0'}` }>
-        <NavItems/>
+      <div className={`nav-sidebar ${isOpen ? "max-h-screen" : "max-h-0"}`}>
+        <NavItems isSmall />
       </div>
     </header>
   );
