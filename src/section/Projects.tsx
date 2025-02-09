@@ -118,7 +118,7 @@ function Projects() {
               target="_blank"
               rel="noreferrer"
             >
-              <p>Check My Project</p>
+              <p><a href={currentProject["source"]? currentProject["source"] : ""}>Check My Project</a></p>
               <FontAwesomeIcon icon={faGlobe} className="w-3 h-3" />
             </a>
           </div>
