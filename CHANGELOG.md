@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.2](https://github.com/fnikolas-r/fnikolas-portfolio/compare/v0.0.1...v0.0.2) (2025-02-09)
+
+
+### Features
+
+* :art: Change Contact Me 3D Model ([e8fabc7](https://github.com/fnikolas-r/fnikolas-portfolio/commit/e8fabc75da3a2a1f3d601b5197a371e9a28d3d28))
+* :sparkles: Add Location and Contact base feature ([fa15c28](https://github.com/fnikolas-r/fnikolas-portfolio/commit/fa15c2833809bf4d7f5f6f0079be856a055925c5))
+* :sparkles: Add new About Component ([a18996a](https://github.com/fnikolas-r/fnikolas-portfolio/commit/a18996a5c2a753533190855fcfc62867922d6339))
+* :sparkles: Integrate Email Service to ContactMe ([6ed09f4](https://github.com/fnikolas-r/fnikolas-portfolio/commit/6ed09f44c54e91dcce44058236f4a04ad350c80c))
+* :sparkles: Integrate UI to backend NOCODB Services ([25f3a48](https://github.com/fnikolas-r/fnikolas-portfolio/commit/25f3a48fc28ecc6109946cf274643994dd700a58))
+
+
+### Bug Fixes
+
+* :bug: Fix Hero UI Bug ([22fbf92](https://github.com/fnikolas-r/fnikolas-portfolio/commit/22fbf92b317ab8bf087d96d5cc90d61dafaa4c6c))
+* :bug: Fix UI Bug ([55c2c57](https://github.com/fnikolas-r/fnikolas-portfolio/commit/55c2c57a9d83c97353e3feda4cd88e5851a5a1ec))
+* :bug: Fix UI Bug ([9e24f04](https://github.com/fnikolas-r/fnikolas-portfolio/commit/9e24f04ce3cef1b6b2463e7e18e4b1d5977ce561))
+* :fire: Replace favicon ([7850c45](https://github.com/fnikolas-r/fnikolas-portfolio/commit/7850c45ea4d51387262b1202e868115ec3613e69))
+* **UI:** :art: Fix ui bug ([ac726b6](https://github.com/fnikolas-r/fnikolas-portfolio/commit/ac726b6b3cd707f00c23f1a88de81c4bd3a2c636))
+* **UI:** :art: Rename Website Header ([b45d6ca](https://github.com/fnikolas-r/fnikolas-portfolio/commit/b45d6ca51ea8913db7e08f387e0e552feda2a33e))
+* **UI:** :bug: Improve UI and Fixing Bug ([15a6e3a](https://github.com/fnikolas-r/fnikolas-portfolio/commit/15a6e3a7890b5b0caa85f425d3f1b019a9972690))
+
 ### 0.0.1 (2025-02-06)
 
 
