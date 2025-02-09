@@ -50,7 +50,6 @@ const EducationAndExperience = () => {
 
   const handleExpData = (d: any) => {
     const data = d.list;
-    console.log(data);
 
     return data.map((x: any) => ({
       id: x["id"],
@@ -89,7 +88,6 @@ const EducationAndExperience = () => {
     select: handleExpData,
   });
 
-  // console.log(workExperiences)
 
   return (
     <section className="c-space my-20" id="experience">
