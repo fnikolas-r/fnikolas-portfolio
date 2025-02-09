@@ -1,23 +1,14 @@
-import React from "react";
 import MapFrame from "../components/Maps";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faGithub, faInstagram, faWordpress, faLinkedin, faTelegram} from '@fortawesome/free-brands-svg-icons'
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import SocialComponent from "../components/SocialComponent";
+import { LOCALES_TEXT, PERSONAL_INFO } from "../constants";
+
+import "react-tooltip/dist/react-tooltip.css";
 
 
-function ContactBox({icon}:{icon:IconProp}){
-  return (
-    <div className="text-xl">
-      <div className="p-2 rounded-md shadow-md">
-        <FontAwesomeIcon icon={icon}/>
-      </div>
-    </div>
-  )
-}
+
 
 function About() {
-
-  const contactTest: IconProp[] = [faLinkedin, faInstagram, faGithub, faWordpress, faTelegram];
+  
 
   return (
     <section className="c-space my-20" id={"about"}>
@@ -41,10 +32,8 @@ function About() {
           <div className="grid-container">
             <div>
               <p className="text-3xl">Hi, My Name is Fernando Nikolas</p>
-              <div className="xl:w-5/6 grid-subtext text-white mt-3">
-                I do code, network, design tech infrastructure and some machine
-                learning. I love building something that makes life easier and
-                challenge myself, push my limits to greater pursuits.
+              <div className="text-justify grid-subtext text-white mt-3">
+                {LOCALES_TEXT.aboutText}
               </div>
             </div>
           </div>
@@ -55,30 +44,22 @@ function About() {
         <div className="col-span-1 xl:col-span-2 xl:row-span-2">
           <div className="grid-container">
             <div>
-            <div className="grid-subtext mb-2">I'm based in Rjieka, Croatia and open to remote work worldwide.</div>
-              <MapFrame/>
+              <div className="grid-subtext mb-2">
+                Connecting from {PERSONAL_INFO.LOCATION.name} to clients worldwide
+              </div>
+              <MapFrame name={PERSONAL_INFO.LOCATION.name} location={PERSONAL_INFO.LOCATION["geo-code"]}/>
             </div>
           </div>
         </div>
 
-        
         {/* Contact Me */}
-
         <div className="col-span-1 xl:row-span-2">
-          <div className="grid-container flex items-center">
-            <img src="/image/phone.png" alt="" className="object-fill h-24 filter grayscale " />
-            <div className="grid-text"><strong>Contact Me</strong></div>
-            <div className="flex gap-1">
-              {contactTest.map((icon, index)=>(
-                <ContactBox key={index} icon={icon}/>
-              ))}
-            </div>
-          </div>
+          <SocialComponent classContainer="grid-container" />
         </div>
-
       </div>
     </section>
   );
+
 }
 
 export default About;
