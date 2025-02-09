@@ -4,13 +4,26 @@ import { animate, useMotionValue, motion } from "framer-motion";
 import { techStacks } from "../constants/faker";
 import { duplicateArr } from "../utils/utilityFunction";
 import TechIcon from "../components/TechIcon";
+import { getMySkill } from "../services/apiServices";
+import { useQuery } from "@tanstack/react-query";
 
 function Skills() {
-  const FAST_DURATION = 20;
+  const { isPending, isError, data : skills , error } = useQuery({
+    queryKey: ["skills"],
+    queryFn: getMySkill,
+    select: (d) => {
+      const data = d.list
+      const x = Math.round(32 / data.length);
+      const itemRepeat = x >= 2 ? x : 2;
+      return duplicateArr(data, itemRepeat);
+    }
+  });
+
+
+  const FAST_DURATION = 30;
   const SLOW_DURATION = 75;
 
-  const itemRepeat = 8;
-  const data = duplicateArr(techStacks, itemRepeat);
+
 
   const [duration, setDuration] = useState(FAST_DURATION);
   const [mustFinish, setMustFinish] = useState(false);
@@ -21,7 +34,7 @@ function Skills() {
 
   useEffect(() => {
     let controls;
-    let finalPosition = -width / 2
+    let finalPosition = -width / 2;
 
     if (mustFinish) {
       controls = animate(xTranslation, [xTranslation.get(), finalPosition], {
@@ -57,7 +70,8 @@ function Skills() {
           ref={ref}
           style={{
             x: xTranslation,
-            overflow:"hidden"
+            overflow: "hidden",
+            width: "max-content"
           }}
           onHoverStart={() => {
             setMustFinish(true);
@@ -68,14 +82,18 @@ function Skills() {
             setDuration(FAST_DURATION);
           }}
         >
-          {data.map((tech,index) => (
-            <TechIcon
-              key={index}
-              name={tech.name}
-              source={tech.source}
-              isSourceFromInternet={tech.isSourceFromInternet}
-            />
-          ))}
+          {isPending
+            ? "Loading..."
+            : isError
+              ? "Error! "+error
+              : skills.map((tech, index) => (
+                  <TechIcon
+                    key={index}
+                    name={tech.Name}
+                    source={tech.source}
+                    isSourceFromInternet={tech.isSourceFromInternet}
+                  />
+                ))}
         </motion.div>
       </div>
     </section>

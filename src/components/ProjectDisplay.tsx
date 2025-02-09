@@ -6,6 +6,8 @@ import * as THREE from 'three'
 import React, { useEffect, useRef } from 'react'
 import { useGLTF, useAnimations, useTexture } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -34,12 +36,13 @@ type GLTFResult = GLTF & {
 type ActionName = 'Take 001'
 type GLTFActions = Record<ActionName, THREE.AnimationAction>
 
-function ProjectDisplay(props: JSX.IntrinsicElements['group']) {
+function ProjectDisplay(props: any) {
   const group = useRef<THREE.Group>()
   const { nodes, materials, animations } = useGLTF('/models_3d/computer.glb') as GLTFResult
   // const { actions } = useAnimations<GLTFActions>(animations, group)
 
-  const txt = useTexture("/image/projects/test-image.png")
+  
+  const txt = useTexture(props.currTxt ? props.currTxt : "/image/projects/test-image.png")
   
   useEffect(() => {
     if (txt) {
@@ -47,6 +50,7 @@ function ProjectDisplay(props: JSX.IntrinsicElements['group']) {
       txt.flipY = false;
     }
   }, [txt])
+  
   
   return (
     <group ref={group} {...props} dispose={null}>
