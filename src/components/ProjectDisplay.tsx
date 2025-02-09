@@ -49,7 +49,7 @@ function ProjectDisplay(props: any) {
       txt.center = new THREE.Vector2(0.5, 0.5);
       txt.flipY = false;
     }
-  }, [txt])
+  }, [props.currTxt])
   
   
   return (

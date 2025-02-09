@@ -4,6 +4,7 @@ type navLinkType = {
   id: number;
   name: string;
   href: string;
+  newTab? :boolean;
 };
 
 

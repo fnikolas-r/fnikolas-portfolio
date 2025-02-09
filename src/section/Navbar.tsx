@@ -5,11 +5,12 @@ import { useState } from "react";
 import { LOCALES_TEXT, navLinks } from "../constants";
 
 const NavItems = ({ isSmall }: { isSmall?: boolean }) => {
+  const navlists = isSmall? [{id:100,href:"https://short.fnikolabs.com/resume", name:LOCALES_TEXT.hereIsMyCV, newTab:true}, ...navLinks] : navLinks
   return (
     <ul className="nav-ul">
-      {navLinks.map(({ id, href, name }) => (
-        <li key={id} className="nav-li">
-          <a href={href} className="nav-li_a">
+      {navlists.map(({ id, href, name, newTab },index) => (
+        <li key={index} className="nav-li">
+          <a href={href} className="nav-li_a" target={newTab?"_blank":"_self"}>
             {name}
           </a>
         </li>

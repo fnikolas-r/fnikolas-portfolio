@@ -14,8 +14,8 @@ api.interceptors.request.use(
   }
 );
 
-
-export const getMyHighlightProject = async ()=> api.get(API_URL.TB_SHOWCASE_URI+"records").then(r=>r.data)
-export const getMySkill = async  () => api.get(API_URL.TB_TECHSTACK_URI+"records?%28isHighlight%2Ceq%2C1%29&").then(r=>r.data)
-export const getEduExp = async  () => api.get(API_URL.TB_EXPERIENCE_URI+"records?sort=-end&where=%28type%2Ceq%2CStudy%29&limit=25&shuffle=0&offset=0").then(r=>r.data)
-export const getWorkExp = async  () => api.get(API_URL.TB_EXPERIENCE_URI+"records?sort=-end&where=%28type%2Ceq%2CWork%29&limit=25&shuffle=0&offset=0").then(r=>r.data)
+const BASE_URI = import.meta.env.VITE_NOCODB_BASE_URI
+export const getMyHighlightProject = async ()=> api.post(BASE_URI, {tablename: API_URL.TB_SHOWCASE_URI}).then(r=>r.data)
+export const getMySkill = async  () => api.post(BASE_URI, {tablename: API_URL.TB_TECHSTACK_URI,query:"%28isHighlight%2Ceq%2C1%29&"}).then(r=>r.data)
+export const getEduExp = async  () => api.post(BASE_URI, {tablename: API_URL.TB_EXPERIENCE_URI,query:"sort=-end&where=%28type%2Ceq%2CStudy%29&limit=25&shuffle=0&offset=0"}).then(r=>r.data)
+export const getWorkExp = async  () => api.post(BASE_URI, {tablename: API_URL.TB_EXPERIENCE_URI,query:"sort=-end&where=%28type%2Ceq%2CWork%29&limit=25&shuffle=0&offset=0"}).then(r=>r.data)

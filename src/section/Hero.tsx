@@ -45,7 +45,7 @@ export default function Hero() {
             </span>
           </p>
           <div className="hidden md:flex items-start">
-            <a href="" className="text-sm">
+            <a href="https://short.fnikolabs.com/resume" className="text-sm">
               <button className="flex gap-4 items-center justify-center cursor-pointer p-3 rounded-md bg-black-300  transition-all active:scale-95 text-white mx-auto">{LOCALES_TEXT.hereIsMyCV}</button>
             </a>
           </div>

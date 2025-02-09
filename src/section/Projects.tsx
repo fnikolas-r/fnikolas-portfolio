@@ -33,7 +33,6 @@ function Projects() {
       };
     },
   });
-  console.log(results);
   const data = isPending || isError ? [] : results?.data;
   const projectCount = isPending || isError ? 0 : results?.count;
   let currentProject =
@@ -114,11 +113,11 @@ function Projects() {
             </div>
             <a
               className="flex items-center gap-2 cursor-pointer text-white-600 text-base"
-              href={"#"}
+              href={currentProject["source"]? currentProject["source"] : ""}
               target="_blank"
               rel="noreferrer"
             >
-              <p><a href={currentProject["source"]? currentProject["source"] : ""}>Check My Project</a></p>
+              <p>Check My Project</p>
               <FontAwesomeIcon icon={faGlobe} className="w-3 h-3" />
             </a>
           </div>
