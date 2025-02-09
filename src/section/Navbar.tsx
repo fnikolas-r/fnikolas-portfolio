@@ -2,24 +2,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
 
 import { useState } from "react";
-import { navLinks } from "../constants";
+import { LOCALES_TEXT, navLinks } from "../constants";
 
 const NavItems = ({ isSmall }: { isSmall?: boolean }) => {
   return (
     <ul className="nav-ul">
-      {isSmall ? (
-        <>
-          {" "}
-          <li className="nav-li">
-            <button className="text-base ">
-              Let’s Get Started – Here’s My CV! 📄
-            </button>
-            <hr className="h-px bg-gray-200 border-0 dark:bg-gray-700"/>
-          </li>
-        </>
-      ) : (
-        <></>
-      )}
       {navLinks.map(({ id, href, name }) => (
         <li key={id} className="nav-li">
           <a href={href} className="nav-li_a">
