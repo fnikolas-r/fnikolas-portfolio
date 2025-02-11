@@ -4,9 +4,9 @@ import { Center, OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 
 import { Suspense, useState } from "react";
-import CanvasLoader from "../components/CanvasLoader";
-import ProjectDisplay from "../components/ProjectDisplay";
-import { PROJECT_LIST } from "../constants";
+import CanvasLoader from "../../components/CanvasLoader";
+import ProjectDisplay from "../../components/ProjectDisplay";
+import { PROJECT_LIST } from "../../constants";
 
 function Projects() {
   const [currentIndex, setCurrentIndex] = useState(0);

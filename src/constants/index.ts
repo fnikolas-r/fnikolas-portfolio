@@ -40,6 +40,7 @@ export const navLinks: navLinkType[] = [
     id: 4,
     name: "Blog",
     href: "https://blog.fnikolabs.com",
+    newTab : true,
   },
   {
     id: 5,
@@ -118,7 +119,7 @@ export const PERSONAL_INFO = {
 
 export const PROJECT_LIST : IProjectList[]= [
   {
-      "title": "ABSA Web Development",
+      "title": "Bizzagi - Aspec Based Sentiment Customer Review",
       "isHighlight": true,
       "desc":"",
       "tags": [

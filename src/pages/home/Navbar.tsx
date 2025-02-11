@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
 
 import { useState } from "react";
-import { LOCALES_TEXT, navLinks } from "../constants";
+import { LOCALES_TEXT, navLinks } from "../../constants";
 
 const NavItems = ({ isSmall }: { isSmall?: boolean }) => {
   const navlists = isSmall? [{id:100,href:"https://short.fnikolabs.com/resume", name:LOCALES_TEXT.hereIsMyCV, newTab:true}, ...navLinks] : navLinks

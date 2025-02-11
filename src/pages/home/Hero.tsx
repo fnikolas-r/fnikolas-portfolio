@@ -3,17 +3,17 @@
 import { PerspectiveCamera } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
-import CanvasLoader from "../components/CanvasLoader";
-import Robot from "../components/Robots";
+import CanvasLoader from "../../components/CanvasLoader";
+import Robot from "../../components/Robots";
 
 import { useMediaQuery } from "react-responsive";
-import RobotsCamera from "../components/RobotsCamera";
+import RobotsCamera from "../../components/RobotsCamera";
 import {
   extraWidthScreen,
   LOCALES_TEXT,
   mediumWidthScreen,
   smallWidthScreen,
-} from "../constants";
+} from "../../constants";
 
 export default function Hero() {
   const isWindowMobile = useMediaQuery({ maxWidth: 768 });
@@ -50,7 +50,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="w-full h-full absolute inset-0">
+        <div className="w-full h-full absolute inset-0 -z-[1000]">
           <Canvas className="w-full h-full">
             <PerspectiveCamera makeDefault position={[0, 0, 30]} />
             <Suspense fallback={<CanvasLoader />}>

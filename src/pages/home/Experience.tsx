@@ -1,5 +1,5 @@
 
-import { EXPERIENCE_LIST, IExperience } from "../constants";
+import { EXPERIENCE_LIST, IExperience } from "../../constants";
 
 const Experience = ({item}:{item:IExperience}) => {
   return (
