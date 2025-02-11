@@ -1,9 +1,9 @@
 import { animate, motion, useMotionValue } from "framer-motion";
 import { useEffect, useState } from "react";
 import useMeasure from "react-use-measure";
-import TechIcon from "../components/TechIcon";
-import { TECH_STACK_LIST } from "../constants";
-import { duplicateArr } from "../utils/utilityFunction";
+import TechIcon from "../../components/TechIcon";
+import { TECH_STACK_LIST } from "../../constants";
+import { duplicateArr } from "../../utils/utilityFunction";
 
 function Skills() {
 

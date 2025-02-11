@@ -6,10 +6,10 @@ import { Suspense } from "react";
 import { useForm } from 'react-hook-form';
 import { useMediaQuery } from "react-responsive";
 import * as yup from 'yup';
-import CanvasLoader from "../components/CanvasLoader";
-import ChibiMesh from "../components/ChibiMesh";
-import SocialComponent from "../components/SocialComponent";
-import { IsendEmail, sendEmail } from "../services/emailServices";
+import CanvasLoader from "../../components/CanvasLoader";
+import ChibiMesh from "../../components/ChibiMesh";
+import SocialComponent from "../../components/SocialComponent";
+import { IsendEmail, sendEmail } from "../../services/emailServices";
 import { toast } from "react-toastify";
 
 const schema = yup.object({
