@@ -25,3 +25,4 @@ dist-ssr
 
 # Sandbox (This folder i use for experimental purpose)
 */sandbox
+public/image/projects/*

@@ -11,5 +11,5 @@ export type clientReviewType = {
     position: string;
     img: string;
     review: string;
-  };
+};
 

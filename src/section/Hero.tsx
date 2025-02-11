@@ -2,19 +2,18 @@
 
 import { PerspectiveCamera } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import Robot from "../components/Robots";
 import { Suspense } from "react";
 import CanvasLoader from "../components/CanvasLoader";
+import Robot from "../components/Robots";
 
-import {
-  mediumWidthScreen,
-  extraWidthScreen,
-  smallWidthScreen,
-  LOCALES_TEXT,
-} from "../constants";
-import RobotsCamera from "../components/RobotsCamera";
 import { useMediaQuery } from "react-responsive";
-import Button from "../components/Button";
+import RobotsCamera from "../components/RobotsCamera";
+import {
+  extraWidthScreen,
+  LOCALES_TEXT,
+  mediumWidthScreen,
+  smallWidthScreen,
+} from "../constants";
 
 export default function Hero() {
   const isWindowMobile = useMediaQuery({ maxWidth: 768 });

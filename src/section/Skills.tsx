@@ -1,25 +1,16 @@
-import React, { useEffect, useState } from "react";
+import { animate, motion, useMotionValue } from "framer-motion";
+import { useEffect, useState } from "react";
 import useMeasure from "react-use-measure";
-import { animate, useMotionValue, motion } from "framer-motion";
-import { techStacks } from "../constants/faker";
-import { duplicateArr } from "../utils/utilityFunction";
 import TechIcon from "../components/TechIcon";
-import { getMySkill } from "../services/apiServices";
-import { useQuery } from "@tanstack/react-query";
+import { TECH_STACK_LIST } from "../constants";
+import { duplicateArr } from "../utils/utilityFunction";
 
 function Skills() {
-  const { isPending, isError, data : skills , error } = useQuery({
-    queryKey: ["skills"],
-    queryFn: getMySkill,
-    select: (d) => {
-      const data = d.list
-      const x = Math.round(32 / data.length);
-      const itemRepeat = x >= 2 ? x : 2;
-      return duplicateArr(data, itemRepeat);
-    }
-  });
 
 
+  const x = Math.round(32/TECH_STACK_LIST.length)
+  const itemRepeat = x > 2 ? x : 2
+  const skills = duplicateArr(TECH_STACK_LIST, itemRepeat )
   const FAST_DURATION = 30;
   const SLOW_DURATION = 75;
 
@@ -82,18 +73,16 @@ function Skills() {
             setDuration(FAST_DURATION);
           }}
         >
-          {isPending
-            ? "Loading..."
-            : isError
-              ? "Error! "+error
-              : skills.map((tech, index) => (
-                  <TechIcon
-                    key={index}
-                    name={tech.Name}
-                    source={tech.source}
-                    isSourceFromInternet={tech.isSourceFromInternet}
-                  />
-                ))}
+          {
+            skills.map((tech, index) => (
+              <TechIcon
+                key={index}
+                name={tech.Name}
+                source={tech.source}
+                isSourceFromInternet={tech.isSourceFromInternet}
+              />
+            ))
+          }
         </motion.div>
       </div>
     </section>

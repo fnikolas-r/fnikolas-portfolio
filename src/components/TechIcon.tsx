@@ -1,11 +1,12 @@
-import React, { useState } from "react";
-import StackIcon from "tech-stack-icons";
-import { mySkillInterface } from "../constants/interfaces";
+import { useState } from "react";
 import { Tooltip } from "react-tooltip";
+import StackIcon from "tech-stack-icons";
+import { ITechStack } from "../constants";
 
-function TechIcon({ isSourceFromInternet, name, source }: mySkillInterface) {
+function TechIcon({ isSourceFromInternet, name, source }: ITechStack) {
   const [isMouseEnter, setIsMouseEnter] = useState(false);
   const id = self.crypto.randomUUID();
+
   return (
     <div className="text-sm">
       <div

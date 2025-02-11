@@ -1,56 +1,25 @@
-import { faArrowUp, faGlobe } from "@fortawesome/free-solid-svg-icons";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Center, OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 
-import React, { Suspense, useEffect, useState } from "react";
+import { Suspense, useState } from "react";
 import CanvasLoader from "../components/CanvasLoader";
 import ProjectDisplay from "../components/ProjectDisplay";
-import { useQuery } from "@tanstack/react-query";
-import { getMyHighlightProject } from "../services/apiServices";
-import { API_URL } from "../constants";
+import { PROJECT_LIST } from "../constants";
 
 function Projects() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const BASE_URI = import.meta.env.VITE_NOCODB_BASE_URI;
 
-  const {
-    isPending,
-    isError,
-    data: results,
-    error,
-  } = useQuery({
-    queryKey: ["project"],
-    queryFn: getMyHighlightProject,
-    select: (d) => {
-      const dee = d.list.filter((x) => x["Title"] != null);
-      return {
-        data: dee.map((d) => ({
-          ...d,
-          currTxt: BASE_URI + d.Image[0]["path"],
-        })),
-        count: dee.length,
-      };
-    },
-  });
-  const data = isPending || isError ? [] : results?.data;
-  const projectCount = isPending || isError ? 0 : results?.count;
-  let currentProject =
-    isPending || isError
-      ? {
-          Title: "",
-          Description: "",
-          TechStack: [],
-          currTxt: "/image/projects/test-image.png",
-        }
-      : data[currentIndex];
+  const projects = PROJECT_LIST
+  const currentProject = projects[currentIndex]
 
   const handleNavigation = (direction: string) => {
     setCurrentIndex((prevIndex) => {
       if (direction === "previous") {
-        return prevIndex === 0 ? projectCount - 1 : prevIndex - 1;
+        return prevIndex === 0 ? projects.length - 1 : prevIndex - 1;
       } else {
-        return prevIndex === projectCount - 1 ? 0 : prevIndex + 1;
+        return prevIndex === projects.length - 1 ? 0 : prevIndex + 1;
       }
     });
   };
@@ -83,29 +52,17 @@ function Projects() {
 
           <div className="flex flex-col gap-5 text-white-600 my-5">
             <p className="text-white text-2xl font-semibold projectText">
-              {isPending ? (
-                <span>Loading...</span>
-              ) : isError ? (
-                <div>Error... {error.message}</div>
-              ) : (
-                <span>{currentProject["Title"]}</span>
-              )}
+              <span>{currentProject["title"]}</span>
             </p>
             <p className="projectText text-base h-28 overflow-hidden">
-              {isPending ? (
-                <span>Loading...</span>
-              ) : isError ? (
-                <div>Error... {error.message}</div>
-              ) : (
-                <span>{currentProject["Description"]}</span>
-              )}
+                <span>{currentProject.desc}</span>
             </p>
           </div>
 
           {/* Tech Stack List */}
           <div className="flex items-center justify-between flex-wrap gap-5">
             <div className="flex items-center flex-wrap gap-3">
-              {currentProject["TechStack"].map((tag, index) => (
+              {currentProject["techstack"].map((tag, index) => (
                 <div key={index} className="text-sm">
                   {tag}
                 </div>
@@ -149,7 +106,7 @@ function Projects() {
                   scale={2}
                   position={[0, -3, 0]}
                   rotation={[0, -0.1, 0]}
-                  currTxt={currentProject.currTxt}
+                  currTxt={currentProject.image}
                 />
               </Suspense>
             </Center>

@@ -7,7 +7,7 @@ import Hero from "./section/Hero";
 import Navbar from "./section/Navbar";
 import Projects from "./section/Projects";
 import Skills from "./section/Skills";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 
 
 export default function App() {
