@@ -22,7 +22,7 @@ const NavItems = ({ isSmall }: { isSmall?: boolean }) => {
 };
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const toogleBar = () => setIsOpen((prevIsOpen) => !prevIsOpen);
 
   return (
