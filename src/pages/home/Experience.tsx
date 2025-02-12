@@ -17,8 +17,8 @@ const Experience = ({item}:{item:IExperience}) => {
         <p className="text-sm mb-3">
           {item.position} -- <span>{item.duration}</span>
         </p>
-        <p className="group-hover:text-white transition-all ease-in-out duration-500">
-          {item.desc}Lorem Ipsum
+        <p className="group-hover:text-white transition-all ease-in-out duration-500 md:text-justify">
+          {item.desc}
         </p>
       </div>
     </div>

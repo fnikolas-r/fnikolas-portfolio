@@ -76,7 +76,7 @@ const ContactMe = () => {
                 </Suspense>
               </Canvas>
             </div>
-            <div className="work-container h-1/2 py-10">
+            <div className="work-container h-1/2 py-10 mb-5">
               <SocialComponent classContainer="w-full h-full flex flex-col gap-3" />
             </div>
           </div>

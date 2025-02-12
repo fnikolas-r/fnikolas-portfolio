@@ -3,6 +3,8 @@ import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
 
 import { useState } from "react";
 import { LOCALES_TEXT, navLinks } from "../../constants";
+import { Link } from "react-router";
+import { alwaysScrollTop } from "../../utils/utilityFunction";
 
 const NavItems = ({ isSmall }: { isSmall?: boolean }) => {
   const navlists = isSmall? [{id:100,href:"https://short.fnikolabs.com/resume", name:LOCALES_TEXT.hereIsMyCV, newTab:true}, ...navLinks] : navLinks
@@ -27,12 +29,13 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 right-0  bg-black/90 z-[100]">
       <div className="max-w-6xl mx-auto">
         <div className="flex justify-between items-center py-5 mx-auto c-space">
-          <a
-            href="/"
+          <Link
+            to={"/"}
             className="text-neutral-400 text-xl hover:text-white transition-colors"
+            onClick={alwaysScrollTop}
           >
             Fernando Nikolas
-          </a>
+          </Link>
 
           <button
             className="text-neutral-400 hover:text-white focus:outline-none sm:hidden flex"

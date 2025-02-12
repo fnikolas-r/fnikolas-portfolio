@@ -4,7 +4,7 @@ import { Tooltip } from "react-tooltip";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 
-function ContactBox({
+export function ContactBox({
     icon,
     href,
     name,

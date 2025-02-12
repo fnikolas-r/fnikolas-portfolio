@@ -65,9 +65,9 @@ export const smallWidthScreen: modelMetadata = {
   scale: 4,
 };
 
-type PROJECT_TAGS = "Web Development" | "Machine Learning" | "DevOps"
+type PROJECT_TAGS = "Web Development" | "Machine Learning" | "DevOps" 
 
-// PORTFOXBLIO DATA
+// PORTFOLIO DATA
 export const TAG_COLLECTION : PROJECT_TAGS[] = [
   "Web Development",
   "Machine Learning",
@@ -126,29 +126,71 @@ export const PERSONAL_INFO = {
 }
 
 export const PROJECT_LIST : IProjectList[]= [
-  {
-      "title": "Bizzagi - Aspec Based Sentiment Customer Review",
+  {"title": "NLP Aspect Based Customer Review",
       "isHighlight": true,
-      "desc":"",
+      "desc":"For this Bangkit Academy capstone project, I built the backend and frontend of a sentiment analysis app that categorized restaurant reviews by aspects (e.g., service, food). I designed cloud infrastructure (Google Cloud Run), optimized deployment costs, and led project planning.",
       "tags": [
           "Web Development",
-          "Machine Learning",
           "DevOps"
       ],
-      "source": "https://developers.google.com/recaptcha/docs/verify?hl=id",
+      "source": "https://github.com/orgs/Bangkit-2024/repositories",
       "techstack": [
           "Python",
           "TypeScript",
           "GoogleCloud",
           "Docker",
-          "Tensorflow"
+          "Tensorflow",
+          "MySQL"
       ],
       "image": "/image/projects/project2-absa.png"
   },
-  {
-      "title": "Expense Manager",
-      "desc":"",
-      "isHighlight": true,
+  {"title": "Warehouse Procurement Recommendation System",
+    "isHighlight": true,
+    "desc":"This project is my undergraduate thesis at Mulawarman University. It aims to recommend item procurement based on past purchase history. The system uses Django for the backend and Laravel for the frontend, with K-Means and Random Forest as recommendation algorithms.",
+    "tags": [
+        "Web Development",
+        "Machine Learning",
+    ],
+    "source": "https://doi.org/10.32736/sisfokom.v13i3.2288",
+    "techstack": [
+      "Python",
+      "Django",
+      "Laravel",
+      "SciKit-Learn"
+    ],
+    "image": "/image/projects/project-undergrad-thesis.png"
+  },
+  {"title": "Kopegtel Project Management System",
+    "desc":"This project is initiated by the Kopegtel Samarinda to enable monitoring and recording of ongoing project activities within Kopegtel, Indocitra, and PT Putra Bistel Solusindo.",
+    "isHighlight": true,
+    "tags": [
+        "Web Development"
+    ],
+    "source": null,
+    "techstack": [
+        "PHP",
+        "JQuery",
+        "MySql"
+    ],
+    "image": "/image/projects/project3-simpro.png"
+  },
+  {"title": "Home Credit: Credit Score Analysis",
+    "desc":"This data analysis project by Zenius For Professionals (ZenPro) aims to analyze credit data and determine credit scores. The results are presented in a Google Looker dashboard, displaying classification predictions and credit data gauges.",
+    "isHighlight": true,
+    "tags": [
+        "Machine Learning"
+    ],
+    "source": null,
+    "techstack": [
+      "Sckit-Learn",
+      "Pandas",
+      "Google Looker",
+    ],
+    "image": "/image/projects/project4-creditscore.png"
+  },
+  {"title": "Expense Manager App",
+      "desc":"This project is designed to track personal income and expenses. It includes expense statistics and analytical insights into personal spending.",
+      "isHighlight": false,
       "tags": [
           "Web Development"
       ],
@@ -160,38 +202,55 @@ export const PROJECT_LIST : IProjectList[]= [
       ],
       "image": "/image/projects/project1-money-manager.png"
   },
-  {
-      "title": "Simpro",
-      "desc":"",
+  {"title": "Desa Sangkima's Site",
+      "desc":"This website was created to highlight Sangkima Village and boost its online presence. Built with OpenSID CMS, it provides an accessible platform for sharing village information.",
       "isHighlight": true,
       "tags": [
           "Web Development"
       ],
       "source": null,
       "techstack": [
+          "OpenSID",
           "PHP",
-          "JQuery"
+          "MySql"
       ],
-      "image": "/image/projects/project3-simpro.png"
-  }
+      "image": "/image/projects/project-desa-sangkima.png"
+  },
+
+  // THIS SHOULD STAY AS THE LAST ITEM ON THE LIST
+  {"title": "Want To See MORE???",
+      "desc":"This isn’t my whole portfolio — tap below to unlock the full story!",
+      "isHighlight": true,
+      "tags": [
+          "Web Development"
+      ],
+      "source": "/welcome-to-my-garage",
+      "techstack": [
+          "Creativity",
+          "Curiosity",
+          "Critical Thinking"
+      ],
+      "image": "/image/projects/cook.jpg"
+  },
+
 ]
 
 export const EXPERIENCE_LIST : IExperience[] = [
   {
       "title": "CV Menara Etam Mandiri",
       "duration":"2023 - 2025 Jan",
-      "desc": null,
-      "logo": undefined,
+      "desc": "I developed a Python-based automation system using Flask, slashing manual sorting and labeling time by 99.7%, from 48 hours to just 3 minutes.  Additionally, I built an asynchronous data monitoring system with Google Looker Studio, enabling cross-device input and real-time workflow tracking.",
+      "logo": "/image/logos/mem.png",
       "type": "Work",
       "isCurrent": false,
-      "position": "Archivist",
+      "position": "Outsourcing Staff",
       "isYearOnly": false
   },
   {
       "title": "Koperasi Pegawai Telkom Samarinda",
       "duration":"2023 Feb - 2023 Mar",
-      "desc": null,
-      "logo": undefined,
+      "desc": "I built a project monitoring system for all Kopegtel Group projects, including PT Putra Bistel Solusindo, streamlining progress tracking and stakeholder decision-making.  I also designed and deployed an automated invoice application integrated with Simpro, reducing manual processing time and errors for improved financial workflow accuracy.",
+      "logo": "/image/logos/kopeg.png",
       "type": "Work",
       "isCurrent": false,
       "position": "IT Support Intern",
@@ -200,8 +259,8 @@ export const EXPERIENCE_LIST : IExperience[] = [
   {
       "title": "Bangkit Academy",
       "duration": "2024 Feb - 2024 Oct",
-      "desc": null,
-      "logo": undefined,
+      "desc": "I led the full-stack development of an AI-powered sentiment analysis tool for restaurant reviews, seamlessly integrating AI-driven insights using Python and React.  Additionally, I designed and implemented GCP deployment strategies, optimizing resource allocation and budget forecasting to achieve a 20% reduction in cloud costs while maintaining a scalable infrastructure for NLP applications.",
+      "logo": "https://files.klob.id/public/mig01/l32ovhf5/channels4_profile.jpg",
       "type": "Study",
       "isCurrent": false,
       "position": "Cloud Computing Cohort",
@@ -210,8 +269,8 @@ export const EXPERIENCE_LIST : IExperience[] = [
   {
       "title": "Information System Assitant",
       "duration": "2021 - 2022",
-      "desc": null,
-      "logo": undefined,
+      "desc": "I taught operating systems, web development, data mining, and web frameworks to students through interactive workshops and hands-on projects.  I also automated reporting and administrative workflows for over 80+ students using Google Suite (Looker Studio, App Script), increasing accuracy and saving significant time.",
+      "logo": "/image/logos/aslab.png",
       "type": "Work",
       "isCurrent": false,
       "position": "Administrator, Treasurer, & Instructor",
@@ -220,8 +279,8 @@ export const EXPERIENCE_LIST : IExperience[] = [
   {
       "title": "Mulawarman University",
       "duration":"2020 -2024",
-      "desc": null,
-      "logo": undefined,
+      "desc": "At Mulawarman University, I studied data management, system design (including ERP), IT infrastructure, web development, and machine learning, culminating in a thesis on a procurement recommendation system for Kopegtel Group Samarinda. I also served as a lab assistant (admin/treasurer) and student association creative industry staff member.",
+      "logo": "https://upload.wikimedia.org/wikipedia/id/thumb/8/83/Unmul_logo_low.svg/1200px-Unmul_logo_low.svg.png",
       "type": "Study",
       "isCurrent": false,
       "position": "CGPA 3.94",

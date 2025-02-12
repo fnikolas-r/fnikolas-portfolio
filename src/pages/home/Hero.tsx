@@ -12,8 +12,10 @@ import {
   extraWidthScreen,
   LOCALES_TEXT,
   mediumWidthScreen,
+  PERSONAL_INFO,
   smallWidthScreen,
 } from "../../constants";
+import { ContactBox } from "../../components/SocialComponent";
 
 export default function Hero() {
   const isWindowMobile = useMediaQuery({ maxWidth: 768 });
@@ -29,8 +31,8 @@ export default function Hero() {
   return (
     <section className="min-h-screen w-full flex flex-col relative" id="home">
       <div className="md:pt-16 w-full md:items-start sm:mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3">
-        <div className="font-medium text-white text-center md:text-left font-generalsans">
-          <p className="">
+        <div className="text-2xl font-medium text-white text-center md:text-left font-generalsans">
+          <p className="text-base md:text-xl">
             Hello, My Name is Fernando <span className="waving-hand">👋</span>
           </p>
           <p className="md:text-left hero_tag md:max-w-xl">
@@ -44,9 +46,18 @@ export default function Hero() {
             </span>
           </p>
           <div className="hidden md:flex items-start">
-            <a href="https://short.fnikolabs.com/resume" className="text-sm">
+            <a href="https://short.fnikolabs.com/resume" target="_blank" className="text-sm">
               <button className="flex gap-4 items-center justify-center cursor-pointer p-3 rounded-md bg-black-300  transition-all active:scale-95 text-white mx-auto">{LOCALES_TEXT.hereIsMyCV}</button>
             </a>
+          </div>
+          <div className="w-full flex">
+            {PERSONAL_INFO.SOCIALS.map((item, index) => (
+              <ContactBox
+                key={index}
+                icon={item.icon}
+                href={item.href}
+                name={item.name} />
+            ))}
           </div>
         </div>
 
