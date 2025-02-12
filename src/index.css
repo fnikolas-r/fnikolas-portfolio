@@ -16,6 +16,11 @@ body {
 }
 
 @layer utilities {
+
+  .animation-pause {
+    animation-play-state: paused;
+  }
+  
   .c-space {
     @apply sm:px-10 px-5;
   }

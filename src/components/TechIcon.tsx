@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Tooltip } from "react-tooltip";
 import StackIcon from "tech-stack-icons";
 import { ITechStack } from "../constants";
+import 'react-tooltip/dist/react-tooltip.css'
+
 
 function TechIcon({ isSourceFromInternet, name, source }: ITechStack) {
   const [isMouseEnter, setIsMouseEnter] = useState(false);

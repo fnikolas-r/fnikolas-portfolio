@@ -27,6 +27,15 @@ export default {
       backgroundImage: {
         terminal: "url('/assets/terminal.png')",
       },
+      keyframes: {
+        'slide-left': {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-100%)' },
+        },
+      },
+      animation: {
+        'slide-left-infinite': 'slide-left 48s linear infinite',
+      },
     },
   },
   plugins: [require('tailwindcss-highlights')],
