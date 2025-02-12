@@ -7,11 +7,22 @@ import { Suspense, useState } from "react";
 import CanvasLoader from "../../components/CanvasLoader";
 import ProjectDisplay from "../../components/ProjectDisplay";
 import { PROJECT_LIST } from "../../constants";
+import { Link, NavLink } from "react-router";
+import { alwaysScrollTop } from "../../utils/utilityFunction";
+import { ProjectModalItem } from "../../components/ProjectModalItem";
 
-function Projects() {
+function Projects({modalHandler}:{modalHandler:Function[]}) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [openModal, setModalChildren] = modalHandler;
 
-  const projects = PROJECT_LIST
+
+
+  const projects = PROJECT_LIST.map((val, index) => ({
+    ...val,
+    id: index,
+    techstack: [...val.techstack.slice(0, 4), ...val.techstack.length > 4 ? ["..."] : []],
+    desc: val.desc.length > 450 ? val.desc.slice(0, 450) + "..." : val.desc
+  }))
   const currentProject = projects[currentIndex]
 
   const handleNavigation = (direction: string) => {
@@ -23,6 +34,8 @@ function Projects() {
       }
     });
   };
+
+  const isLastIndex = (projects.length - 1) === currentIndex
 
   // const c = useControls("ProjectPC",{
   //     px:{value:0, min:-20, max:20},
@@ -54,30 +67,28 @@ function Projects() {
             <p className="text-white text-2xl font-semibold projectText">
               <span>{currentProject["title"]}</span>
             </p>
-            <p className="projectText text-base h-28 overflow-hidden">
-                <span>{currentProject.desc}</span>
+            <p className={`projectText ${isLastIndex ? "text-2xl font-arapey" : "text-base"} text-justify h-48 md:h-32 overflow-hidden`}>
+              <span>{currentProject.desc}</span>
             </p>
           </div>
 
           {/* Tech Stack List */}
-          <div className="flex items-center justify-between flex-wrap gap-5">
-            <div className="flex items-center flex-wrap gap-3">
+          <div className="flex flex-col items-start justify-between">
+            <div className="flex items-center flex-wrap gap-3 w-full">
               {currentProject["techstack"].map((tag, index) => (
-                <div key={index} className="text-sm">
+                <div key={index} className="text-xs bg-slate-800 p-1">
                   {tag}
                 </div>
               ))}
             </div>
-            <a
-              className="flex items-center gap-2 cursor-pointer text-white-600 text-base"
-              href={currentProject["source"]? currentProject["source"] : ""}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <p>Check My Project</p>
-              <FontAwesomeIcon icon={faGlobe} className="w-3 h-3" />
-            </a>
+            <div className="mt-3 items-center gap-2 cursor-pointer text-white-600 text-base">
+            {isLastIndex ? <NavLink to={currentProject.source as string} onClick={alwaysScrollTop}>Tap Below for more 🔍</NavLink> :
+              <p onClick={()=>{
+                setModalChildren(<ProjectModalItem project={PROJECT_LIST[currentIndex]}/>)
+                openModal()
+              }}>Click To See More</p>}
           </div>
+            </div>
 
           <div className="flex justify-between items-center mt-7">
             <button

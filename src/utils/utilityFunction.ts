@@ -1,4 +1,5 @@
 import axios from "axios";
+import { exp } from "maath/dist/declarations/src/easing";
 
 /**
  * 
@@ -18,3 +19,5 @@ export const checkInternetConn = async (url : string) : Promise<boolean> => {
 export const capitalizeText = (text:string) : string =>{
     return text.split(" ").map(letter=> letter.charAt(0).toUpperCase()+letter.slice(1)).join(" ")
 }
+
+export const alwaysScrollTop = () => window.scrollTo(0, 0)

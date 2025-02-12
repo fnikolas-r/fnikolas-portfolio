@@ -45,11 +45,13 @@ function ProjectDisplay(props: any) {
   const txt = useTexture(props.currTxt ? props.currTxt : "/image/projects/test-image.png")
   
   useEffect(() => {
-    if (txt) {
-      txt.center = new THREE.Vector2(0.5, 0.5);
-      txt.flipY = false;
-    }
-  }, [props.currTxt])
+    txt.center.set(0.5, 0.5); // Set pivot to center
+    txt.rotation = Math.PI; // Rotate 180 degrees
+    txt.flipY = false; // Ensure it's not flipped vertically
+    txt.repeat.set(-1, 1); // Flip horizontally
+    txt.wrapS = THREE.RepeatWrapping; // Enable repeat wrapping
+  }, [txt]);
+  
   
   
   return (
