@@ -216,6 +216,20 @@ export const PROJECT_LIST : IProjectList[]= [
       ],
       "image": "/image/projects/project-desa-sangkima.png"
   },
+  {"title": "This Portfolio",
+      "desc":"I Build this to promote myself and as a motivation for me to learn something new",
+      "isHighlight": false,
+      "tags": [
+          "Web Development"
+      ],
+      "source": "/",
+      "techstack": [
+        "React",
+        "ThreeJS",
+        "Framer-Motion",
+      ],
+      "image": "/image/projects/project-portfolio.png"
+  },
 
   // THIS SHOULD STAY AS THE LAST ITEM ON THE LIST
   {"title": "Want To See MORE???",
