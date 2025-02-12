@@ -14,3 +14,7 @@ export const duplicateArr = (arr:any[], times:number) : any[]=>
 export const checkInternetConn = async (url : string) : Promise<boolean> => {
     return axios.get(url).then(()=>true).catch(()=>false)
 }
+
+export const capitalizeText = (text:string) : string =>{
+    return text.split(" ").map(letter=> letter.charAt(0).toUpperCase()+letter.slice(1)).join(" ")
+}
