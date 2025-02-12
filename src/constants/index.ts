@@ -51,7 +51,7 @@ export const navLinks: navLinkType[] = [
 
 export const extraWidthScreen: modelMetadata = {
   position: [8, -6.5, 1.9],
-  rotation: [0, 0.7, 0],
+  rotation: [0, 0, 0],
   scale: 6.5,
 };
 export const mediumWidthScreen: modelMetadata = {
@@ -65,12 +65,20 @@ export const smallWidthScreen: modelMetadata = {
   scale: 4,
 };
 
-// PORTFOLIO DATA
+type PROJECT_TAGS = "Web Development" | "Machine Learning" | "DevOps"
+
+// PORTFOXBLIO DATA
+export const TAG_COLLECTION : PROJECT_TAGS[] = [
+  "Web Development",
+  "Machine Learning",
+  "DevOps"
+]
+
 
 export interface IProjectList {
   title: string,
   isHighlight: boolean,
-  tags : string[],
+  tags : PROJECT_TAGS[],
   source ?: string |null,
   techstack: string[],
   desc: string,
@@ -125,7 +133,7 @@ export const PROJECT_LIST : IProjectList[]= [
       "tags": [
           "Web Development",
           "Machine Learning",
-          "Dev/Ops"
+          "DevOps"
       ],
       "source": "https://developers.google.com/recaptcha/docs/verify?hl=id",
       "techstack": [

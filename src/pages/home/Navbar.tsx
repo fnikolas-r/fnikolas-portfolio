@@ -24,7 +24,7 @@ export default function Navbar() {
   const toogleBar = () => setIsOpen((prevIsOpen) => !prevIsOpen);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black/90">
+    <header className="fixed top-0 left-0 right-0  bg-black/90 z-[100]">
       <div className="max-w-6xl mx-auto">
         <div className="flex justify-between items-center py-5 mx-auto c-space">
           <a

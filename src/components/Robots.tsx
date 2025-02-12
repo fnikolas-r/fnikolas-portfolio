@@ -7,7 +7,7 @@ Title: Robot Playground
 */
 
 import * as THREE from 'three'
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 
@@ -96,6 +96,13 @@ function Robot(props: JSX.IntrinsicElements['group']) {
   const group = useRef<THREE.Group>()
   const { nodes, materials, animations } = useGLTF('/models_3d/robot.glb') as GLTFResult
   const { actions } = useAnimations<GLTFActions>(animations, group)
+  
+  useEffect(() => {
+    if (actions ) {
+      Object.values(actions).forEach((action:any) => action.play())
+    }
+  }, [actions])
+  
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Sketchfab_Scene">

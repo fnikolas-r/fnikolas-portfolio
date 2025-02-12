@@ -10,7 +10,6 @@ import BaseTemplate from "../base.template";
 function Home() {
   return (
     <BaseTemplate>
-      <Navbar />
       <Hero />
       <About />
       <Skills />

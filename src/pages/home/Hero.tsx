@@ -1,6 +1,6 @@
 // TODO: HANDLE ON CLICK IT ROTATE ON Y ONLY
 
-import { PerspectiveCamera } from "@react-three/drei";
+import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import CanvasLoader from "../../components/CanvasLoader";
@@ -33,7 +33,7 @@ export default function Hero() {
           <p className="">
             Hello, My Name is Fernando <span className="waving-hand">👋</span>
           </p>
-          <p className="md:text-left hero_tag max-w-xl">
+          <p className="md:text-left hero_tag md:max-w-xl">
             I Build{" "}
             <span className="highlight highlight-variant-12 after:bg-gradient-to-tr after:from-amber-500 after:to-sky-500">
               Products

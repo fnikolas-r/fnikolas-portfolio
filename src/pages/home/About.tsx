@@ -1,6 +1,6 @@
-import MapFrame from "../components/Maps";
-import SocialComponent from "../components/SocialComponent";
-import { LOCALES_TEXT, PERSONAL_INFO } from "../constants";
+import MapFrame from "../../components/Maps";
+import SocialComponent from "../../components/SocialComponent";
+import { LOCALES_TEXT, PERSONAL_INFO } from "../../constants";
 
 import "react-tooltip/dist/react-tooltip.css";
 
