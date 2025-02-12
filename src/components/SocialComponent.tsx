@@ -21,6 +21,7 @@ function ContactBox({
             data-tooltip-id={`${name}-tooltip`}
             data-tooltip-content={name}
             data-tooltip-place="top"
+            target="_blank"
           >
             <FontAwesomeIcon icon={icon} className="text-xl" />
           </a>

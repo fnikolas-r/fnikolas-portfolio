@@ -19,22 +19,22 @@ export const navLinks: navLinkType[] = [
   {
     id: 1,
     name: "Home",
-    href: "#home",
+    href: "/#home",
   },
   {
     id: 2,
     name: "About",
-    href: "#about",
+    href: "/#about",
   },
   {
     id: 3,
     name: "Experience",
-    href: "#experience",
+    href: "/#experience",
   },
   {
     id: 3,
     name: "Project",
-    href: "#project",
+    href: "/#project",
   },
   {
     id: 4,
@@ -45,7 +45,7 @@ export const navLinks: navLinkType[] = [
   {
     id: 5,
     name: "Contact",
-    href: "#contact",
+    href: "/#contact",
   },
 ];
 
