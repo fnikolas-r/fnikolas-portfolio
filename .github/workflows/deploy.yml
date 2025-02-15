@@ -15,10 +15,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Release Please Action
-        uses: google-github-actions/release-please-action@v4
+        uses: googleapis/release-please-action@v4 
         with:
           release-type: node
-          package-name: "vite-react-porto"
+          package-name: "vite-react-app"
+
 
   build-and-deploy:
     needs: release
