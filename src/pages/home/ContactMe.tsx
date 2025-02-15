@@ -15,6 +15,7 @@ import { toast } from "react-toastify";
 const schema = yup.object({
     name: yup.string().required(),
     email: yup.string().email().required(),
+    phone: yup.string().required(),
     message: yup.string().required()
   }).required()
 
@@ -31,7 +32,7 @@ const ContactMe = () => {
   })
 
 
-  const {isPending, isError, isSuccess, mutateAsync} = useMutation({
+  const {isPending, mutateAsync} = useMutation({
     mutationFn: (val:IsendEmail)=>sendEmail(val),
   })
 
@@ -115,6 +116,18 @@ const ContactMe = () => {
                     
                     className="field-input"
                     placeholder="So I can reply with my order."
+                  />
+                </label>
+                <label className="space-y-3">
+                  <span className="field-label">📱 Phone Number/Telegram ID</span>
+                  <p className="text-red-500">{errors.phone?.message}</p>
+                  <input
+                  {...register("phone")}
+                    // value={form.email}
+                    // onChange={handleChange}
+                    
+                    className="field-input"
+                    placeholder="Phone Number / Telegram ID"
                   />
                 </label>
 

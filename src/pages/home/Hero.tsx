@@ -1,6 +1,6 @@
 // TODO: HANDLE ON CLICK IT ROTATE ON Y ONLY
 
-import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
+import {  PerspectiveCamera } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import CanvasLoader from "../../components/CanvasLoader";
@@ -50,7 +50,7 @@ export default function Hero() {
               <button className="flex gap-4 items-center justify-center cursor-pointer p-3 rounded-md bg-black-300  transition-all active:scale-95 text-white mx-auto">{LOCALES_TEXT.hereIsMyCV}</button>
             </a>
           </div>
-          <div className="w-full flex">
+          <div className="w-full flex md:justify-start justify-center md:text-center">
             {PERSONAL_INFO.SOCIALS.map((item, index) => (
               <ContactBox
                 key={index}

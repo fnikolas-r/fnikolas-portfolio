@@ -7,7 +7,7 @@ Title: Smol Ame in an Upcycled Terrarium [HololiveEn]
 */
 
 import * as THREE from 'three'
-import React, { useEffect, useRef } from 'react'
+import React, { ComponentPropsWithoutRef, useEffect, useRef } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 
@@ -48,7 +48,11 @@ type GLTFResult = GLTF & {
 type ActionName = 'Animation'
 type GLTFActions = Record<ActionName, THREE.AnimationAction>
 
-function ChibiMesh({isLoading, ...props}:any) {
+interface IChibiMesh extends ComponentPropsWithoutRef<"group">{
+  isLoading:boolean
+}
+
+function ChibiMesh({isLoading, ...props}:IChibiMesh) {
   const group = useRef<THREE.Group>()
   const { nodes, materials, animations } = useGLTF('/models_3d/chibi.glb') as GLTFResult
   const { actions } = useAnimations<GLTFActions>(animations, group)

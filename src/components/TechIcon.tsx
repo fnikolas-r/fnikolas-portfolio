@@ -31,7 +31,7 @@ function TechIcon({ isSourceFromInternet, name, source }: ITechStack) {
           </p>
         )}
       </div>
-      <Tooltip id={id} className="text-sm" />
+      <Tooltip id={id} className="text-sm z-[1000]" />
     </div>
   );
 }

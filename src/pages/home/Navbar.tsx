@@ -10,7 +10,7 @@ const NavItems = ({ isSmall }: { isSmall?: boolean }) => {
   const navlists = isSmall? [{id:100,href:"https://short.fnikolabs.com/resume", name:LOCALES_TEXT.hereIsMyCV, newTab:true}, ...navLinks] : navLinks
   return (
     <ul className="nav-ul">
-      {navlists.map(({ id, href, name, newTab },index) => (
+      {navlists.map(({  href, name, newTab },index) => (
         <li key={index} className="nav-li">
           <a href={href} className="nav-li_a" target={newTab?"_blank":"_self"}>
             {name}

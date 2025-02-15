@@ -1,26 +1,16 @@
 // TODO: HANDLE ON CLICK IT ROTATE ON Y ONLY
 
-import { CameraControls, OrbitControls, PerspectiveCamera, SoftShadows } from "@react-three/drei";
+import {  PerspectiveCamera } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import CanvasLoader from "../../components/CanvasLoader";
 
 import { useMediaQuery } from "react-responsive";
 import OldComputer from "../../components/OldComputer";
-import {
-  extraWidthScreen,
-  LOCALES_TEXT,
-  mediumWidthScreen,
-  smallWidthScreen,
-} from "../../constants";
 
-import { useControls, Leva } from "leva";
 
 export default function Hero() {
   const isWindowMobile = useMediaQuery({ maxWidth: 768 });
-  const isWindowTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
-  const isWindowLarge = useMediaQuery({ minWidth: 1024 });
-
 
   return (
     <section className="min-h-screen w-full flex flex-col relative" id="home">

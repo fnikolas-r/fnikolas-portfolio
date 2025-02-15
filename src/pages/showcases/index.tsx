@@ -16,7 +16,7 @@ function ShowCases() {
     <ListDetail>
         <SimpleModals isOpen={isOpen} onClose={closeModal}>{modalChildren}</SimpleModals>
         <Hero/>
-        <ProjectList modalControl={[openModal, closeModal, setModalChildren]}/>
+        <ProjectList modalHandler={[openModal, setModalChildren]}/>
     </ListDetail>
   )
 }

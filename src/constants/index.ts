@@ -65,10 +65,10 @@ export const smallWidthScreen: modelMetadata = {
   scale: 4,
 };
 
-type PROJECT_TAGS = "Web Development" | "Machine Learning" | "DevOps" 
+export type IPROJECT_TAGS = "Web Development" | "Machine Learning" | "DevOps" | "All"
 
 // PORTFOLIO DATA
-export const TAG_COLLECTION : PROJECT_TAGS[] = [
+export const TAG_COLLECTION : IPROJECT_TAGS[] = [
   "Web Development",
   "Machine Learning",
   "DevOps"
@@ -78,7 +78,7 @@ export const TAG_COLLECTION : PROJECT_TAGS[] = [
 export interface IProjectList {
   title: string,
   isHighlight: boolean,
-  tags : PROJECT_TAGS[],
+  tags : IPROJECT_TAGS[],
   source ?: string |null,
   techstack: string[],
   desc: string,

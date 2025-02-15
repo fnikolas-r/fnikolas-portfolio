@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 const clip_anim = {
@@ -24,18 +24,28 @@ const clip_anim = {
   },
 };
 
-function SimpleModals({ isOpen, onClose , children}: { isOpen: boolean, onClose: any, children: React.ReactNode}) {
+function SimpleModals({ isOpen, onClose , children}: { isOpen: boolean, onClose: ()=>void, children: React.ReactNode}) {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
   return (
     <AnimatePresence>
       {isOpen && <motion.div
         variants={clip_anim}
         initial="initial"
         animate="enter"
-        transition="transtion"
         exit="exit"
-        className={"w-[100vw] h-[100vh] bg-white-800 fixed left-0 z-[500] text-black-100 "}
+        className={"w-[100vw] h-[100vh] bg-white-800 fixed left-0 z-[500] text-black-100 overflow-y-auto"}
       >
-        <div className="max-w-6xl mx-auto pt-20">
+        <div className="max-w-6xl mx-auto pt-20 overflow-y-auto">
           <button className="py-3 px-4 fixed right-2 top-4 rounded-sm outline-slate-600 cursor-pointer hover:bg-black-300 hover:text-white-600 hover:outline-black-100" onClick={() => onClose()}>
             &times;
           </button>

@@ -11,7 +11,6 @@ function Skills() {
     <section className="c-space my-20">
       <p className="text-center">Skillset</p>
       <p className="my-2 text-base italic text-center text-slate-500">
-        Here Are Some Skills
       </p>
       <div className="group flex relative overflow-hidden whitespace-nowrap  py-10 [mask-image:_linear-gradient(to_right,_transparent_0,_white_128px,white_calc(100%-128px),_transparent_100%)]">
         {[1, 2].map((_,index) => (

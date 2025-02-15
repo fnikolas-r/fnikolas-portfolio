@@ -89,17 +89,15 @@ type GLTFResult = GLTF & {
   }
 }
 
-type ActionName = 'Experiment'
-type GLTFActions = Record<ActionName, THREE.AnimationAction>
 
 function Robot(props: JSX.IntrinsicElements['group']) {
-  const group = useRef<THREE.Group>()
+  const group = useRef<THREE.Group>(null)
   const { nodes, materials, animations } = useGLTF('/models_3d/robot.glb') as GLTFResult
-  const { actions } = useAnimations<GLTFActions>(animations, group)
+  const { actions } = useAnimations(animations, group)
   
   useEffect(() => {
     if (actions ) {
-      Object.values(actions).forEach((action:any) => action.play())
+      Object.values(actions).forEach((action) => action!.play())
     }
   }, [actions])
   

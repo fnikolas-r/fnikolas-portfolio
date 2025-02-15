@@ -1,17 +1,18 @@
-import { faGlobe } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Center, OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 
-import { Suspense, useState } from "react";
+import React, { Suspense, useState } from "react";
 import CanvasLoader from "../../components/CanvasLoader";
 import ProjectDisplay from "../../components/ProjectDisplay";
 import { PROJECT_LIST } from "../../constants";
-import { Link, NavLink } from "react-router";
+import { NavLink } from "react-router";
 import { alwaysScrollTop } from "../../utils/utilityFunction";
 import { ProjectModalItem } from "../../components/ProjectModalItem";
+import { Euler, Vector3 } from "three";
 
-function Projects({modalHandler}:{modalHandler:Function[]}) {
+type ModalHandler = [()=>void, React.Dispatch<React.SetStateAction<React.ReactNode>>];
+
+function Projects({ modalHandler }: { modalHandler: ModalHandler }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [openModal, setModalChildren] = modalHandler;
 
@@ -22,7 +23,7 @@ function Projects({modalHandler}:{modalHandler:Function[]}) {
     id: index,
     techstack: [...val.techstack.slice(0, 4), ...val.techstack.length > 4 ? ["..."] : []],
     desc: val.desc.length > 450 ? val.desc.slice(0, 450) + "..." : val.desc
-  }))
+  })).filter((project)=>project.isHighlight)
   const currentProject = projects[currentIndex]
 
   const handleNavigation = (direction: string) => {
@@ -114,9 +115,9 @@ function Projects({modalHandler}:{modalHandler:Function[]}) {
             <Center>
               <Suspense fallback={<CanvasLoader />}>
                 <ProjectDisplay
-                  scale={2}
-                  position={[0, -3, 0]}
-                  rotation={[0, -0.1, 0]}
+                  scale={new Vector3(2)}
+                  position={new Vector3(0, -3, 0)}
+                  rotation={new Euler(0, -0.1, 0)}
                   currTxt={currentProject.image}
                 />
               </Suspense>

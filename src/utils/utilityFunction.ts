@@ -1,5 +1,4 @@
 import axios from "axios";
-import { exp } from "maath/dist/declarations/src/easing";
 
 /**
  * 
@@ -7,10 +6,10 @@ import { exp } from "maath/dist/declarations/src/easing";
  * @param times : how many replication you want to make
  * @returns : n times number of array ex [1,2,3]*3 ==> [1,2,3,1,2,3,1,2,3] 
  */
-export const duplicateArr = (arr:any[], times:number) : any[]=>
+export const duplicateArr = <T>(arr: T[], times: number): T[] =>
     Array(times)
-        .fill([...arr])
-        .reduce((a, b) => a.concat(b));
+        .fill(null)
+        .flatMap(() => arr);
 
 export const checkInternetConn = async (url : string) : Promise<boolean> => {
     return axios.get(url).then(()=>true).catch(()=>false)

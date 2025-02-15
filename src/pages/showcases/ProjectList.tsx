@@ -1,5 +1,5 @@
 import { MouseEventHandler, useState } from "react";
-import { PROJECT_LIST, TAG_COLLECTION } from "../../constants";
+import { IPROJECT_TAGS, PROJECT_LIST, TAG_COLLECTION } from "../../constants";
 import { ProjectModalItem } from "../../components/ProjectModalItem";
 
 export function LabelItem({name, className="",active, onClick}:{name:string, className?:string, active? : boolean, onClick?:MouseEventHandler<HTMLButtonElement>}) {
@@ -11,8 +11,12 @@ export function LabelItem({name, className="",active, onClick}:{name:string, cla
   </button>
 }
 
-function ProjectList({ modalControl }: { modalControl: Function[] }) {
-  const [filterKeyword, setFilterKeyword] = useState("All")
+type IModalHandler =  [()=>void, React.Dispatch<React.SetStateAction<React.ReactNode>>];
+
+
+
+function ProjectList({ modalHandler }: { modalHandler: IModalHandler }) {
+  const [filterKeyword, setFilterKeyword] = useState<IPROJECT_TAGS>("All")
 
   const dataSlicer = PROJECT_LIST.map((val, index) => ({
     ...val,
@@ -21,7 +25,7 @@ function ProjectList({ modalControl }: { modalControl: Function[] }) {
     desc: val.desc.length > 100 ? val.desc.slice(0, 100) + "..." : val.desc
   })).slice(0,PROJECT_LIST.length-1)
 
-  const [openModal, __, setModalChildren] = modalControl
+  const [openModal, setModalChildren] = modalHandler
   const filteredData = dataSlicer.filter((data)=>data.tags.includes(filterKeyword)||filterKeyword=='All')
 
 
@@ -31,7 +35,7 @@ function ProjectList({ modalControl }: { modalControl: Function[] }) {
       <div className="mt-3 flex flex-wrap gap-3 ">
         <p>Category : </p>
         {["All",...TAG_COLLECTION].map((tag, index) => (
-          <LabelItem name={tag} key={index} active={tag==filterKeyword} onClick={()=>{setFilterKeyword(tag)}}/>
+          <LabelItem name={tag} key={index} active={tag==filterKeyword} onClick={()=>{setFilterKeyword(tag as IPROJECT_TAGS)}}/>
         ))}
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 flex-wrap mt-5">

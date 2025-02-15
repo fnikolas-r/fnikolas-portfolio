@@ -7,7 +7,7 @@ import Loader from "./components/Loader";
 
 
 export default function App() {
-  const [screenLoading, setScreenLoading] = useState(false);
+  const [screenLoading, setScreenLoading] = useState(true);
 
   useEffect(() => {
     setScreenLoading(true);
@@ -16,6 +16,7 @@ export default function App() {
     }, 1000);
   }, []);
 
+  
   const queryClient = new QueryClient()
   if (screenLoading) {
     return <Loader />
@@ -24,7 +25,7 @@ export default function App() {
     return (
       <QueryClientProvider client={queryClient}>
         <Routes>
-          <Route index element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="welcome-to-my-garage" element={<ShowCases />} />
         </Routes>
       </QueryClientProvider>
