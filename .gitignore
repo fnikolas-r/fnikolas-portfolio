@@ -27,3 +27,4 @@ dist-ssr
 */sandbox
 public/image/projects/*
 public/image/logos/*
+.prettierrc
