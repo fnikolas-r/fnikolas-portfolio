@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - deploy
+      - 1.x
   workflow_dispatch:
 
 permissions:
@@ -11,17 +12,7 @@ permissions:
   pull-requests: write
 
 jobs:
-  release:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Release Please Action
-        uses: google-github-actions/release-please-action@v4
-        with:
-          release-type: node
-          package-name: "vite-react-porto"
-
   build-and-deploy:
-    needs: release
     runs-on: ubuntu-latest
 
     steps:
@@ -51,7 +42,7 @@ jobs:
           ftp -n < ftp_commands.txt
 
       - name: Deploy to cPanel via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
@@ -63,3 +54,12 @@ jobs:
             **/.git*/**
             **/node_modules/**
             **/README.md
+
+  release:
+    needs: build-and-deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Release Please Action
+        uses: googleapis/release-please-action@v4
+        with:
+          release-type: simple
