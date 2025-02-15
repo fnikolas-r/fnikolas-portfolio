@@ -13,6 +13,7 @@ permissions:
 
 jobs:
   build-and-deploy:
+    environment: FTP-Fnikolabs
     runs-on: ubuntu-latest
 
     steps:
@@ -30,16 +31,6 @@ jobs:
 
       - name: Build the React app 😱
         run: npm run build
-
-      - name: Move old files to OLDFILES before upload
-        run: |
-          echo "open ${{ secrets.FTP_HOST }}" > ftp_commands.txt
-          echo "user ${{ secrets.FTP_USERNAME }} ${{ secrets.FTP_PASSWORD }}" >> ftp_commands.txt
-          echo "mkdir OLDFILES" >> ftp_commands.txt
-          echo "rename public_html OLDFILES/$(date +'%Y%m%d-%H%M%S')" >> ftp_commands.txt
-          echo "mkdir public_html" >> ftp_commands.txt
-          echo "bye" >> ftp_commands.txt
-          ftp -n < ftp_commands.txt
 
       - name: Deploy to cPanel via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
