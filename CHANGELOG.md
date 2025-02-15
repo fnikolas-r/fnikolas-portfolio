@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/fnikolas-r/fnikolas-portfolio/compare/v1.1.0...v1.2.0) (2025-02-15)
+
+
+### Features
+
+* :art: Add env production example ([763548b](https://github.com/fnikolas-r/fnikolas-portfolio/commit/763548bcc299d2c96b6dd54fcc1b2bddcd7b7407))
+* :art: Add Modal for all project ([c72a752](https://github.com/fnikolas-r/fnikolas-portfolio/commit/c72a75233834534c9232d224e36ddd8c7f3af226))
+* :sparkles: Add Loader and This Site To Portfolio ([6b172b8](https://github.com/fnikolas-r/fnikolas-portfolio/commit/6b172b8d25f7cb3853e88ff259adc3dec6b0876e))
+* :sparkles: Create Project Master List ([8116d5c](https://github.com/fnikolas-r/fnikolas-portfolio/commit/8116d5cf2a4c99603d6ab12e63c633e344803ee8))
+* Insert real data to index.ts ([fdebb7f](https://github.com/fnikolas-r/fnikolas-portfolio/commit/fdebb7fa2e8783bd775192abe48edbba20aab6b7))
+
+
+### Bug Fixes
+
+* :art: Change Data to Local Mode ([73e2d52](https://github.com/fnikolas-r/fnikolas-portfolio/commit/73e2d52b788a477269b9395486dba3147c0d2344))
+* :bug: Fix tsc -b build error ([a27d1b3](https://github.com/fnikolas-r/fnikolas-portfolio/commit/a27d1b347b2a2b1c56f5025fd45338692bd50a76))
+* :bug: Fix Typescript error ([137ef7e](https://github.com/fnikolas-r/fnikolas-portfolio/commit/137ef7e56bc5f997a5015dbd391c9f21d5dfa552))
+* Fixing Import Error ([b645abf](https://github.com/fnikolas-r/fnikolas-portfolio/commit/b645abf534baea5985f79e3a6946a12b2c2c4569))
+* **UI:** :art: Fix UI Bug ([deb63dd](https://github.com/fnikolas-r/fnikolas-portfolio/commit/deb63ddb263ea4c0e214ae930098448accd9ea8e))
+* **UI:** fix ui new tab bugs ([57900e8](https://github.com/fnikolas-r/fnikolas-portfolio/commit/57900e88dcd34aa60092acf40a4957c7e907868f))
+* **UI:** Fix UI Rotate Bug ([5cbf274](https://github.com/fnikolas-r/fnikolas-portfolio/commit/5cbf274b58f46403fcddaa4a625440f4e2fa0217))
+
+
+### Performance Improvements
+
+* **UI:** :zap: Replace framer-motion to vanilla tailwindcss ([2cdfb0b](https://github.com/fnikolas-r/fnikolas-portfolio/commit/2cdfb0b86b09d77be1519d5fd4396aeccc750bc5))
+
 ### [1.1.1](https://github.com/fnikolas-r/fnikolas-portfolio/compare/v1.1.0...v1.1.1) (2025-02-11)
 
 
