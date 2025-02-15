@@ -7,7 +7,7 @@ Title: Old Computer V2
 */
 
 import * as THREE from "three";
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 
@@ -23,8 +23,8 @@ type GLTFResult = GLTF & {
 };
 
 function OldComputer(props: JSX.IntrinsicElements["group"]) {
-  const group = useRef<THREE.Group<THREE.Object3DEventMap>>();
-  const light = useRef();
+  const group = useRef<THREE.Group<THREE.Object3DEventMap>>(null);
+  const light = useRef(null);
   const { nodes, materials } = useGLTF(
     "/models_3d/old_computer.glb"
   ) as GLTFResult;

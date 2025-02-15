@@ -7,7 +7,6 @@ import CanvasLoader from "../../components/CanvasLoader";
 import Robot from "../../components/Robots";
 
 import { useMediaQuery } from "react-responsive";
-import RobotsCamera from "../../components/RobotsCamera";
 import {
   extraWidthScreen,
   LOCALES_TEXT,
@@ -18,7 +17,6 @@ import {
 import { ContactBox } from "../../components/SocialComponent";
 
 export default function Hero() {
-  const isWindowMobile = useMediaQuery({ maxWidth: 768 });
   const isWindowTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
   const isWindowLarge = useMediaQuery({ minWidth: 1024 });
 
@@ -65,13 +63,13 @@ export default function Hero() {
           <Canvas className="w-full h-full">
             <PerspectiveCamera makeDefault position={[0, 0, 30]} />
             <Suspense fallback={<CanvasLoader />}>
-              <RobotsCamera isMobile={isWindowMobile}>
+              {/* <RobotsCamera isMobile={isWindowMobile}> */}
                 <Robot
                   scale={modelGeometry.scale}
                   position={modelGeometry.position}
                   rotation={modelGeometry.rotation}
                 />
-              </RobotsCamera>
+              {/* </RobotsCamera> */}
               <ambientLight intensity={1.2} />
               <directionalLight position={[10, 10, 10]} intensity={1} />
             </Suspense>

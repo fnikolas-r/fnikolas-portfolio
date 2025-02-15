@@ -1,5 +1,3 @@
-import React from "react";
-
 const MapFrame = ({name,location}:{name:string, location:string}) => {
   return (
     <div>
