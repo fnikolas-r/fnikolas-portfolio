@@ -8,7 +8,6 @@ import { PROJECT_LIST } from "../../constants";
 import { NavLink } from "react-router";
 import { alwaysScrollTop } from "../../utils/utilityFunction";
 import { ProjectModalItem } from "../../components/ProjectModalItem";
-import { Euler, Vector3 } from "three";
 
 type ModalHandler = [()=>void, React.Dispatch<React.SetStateAction<React.ReactNode>>];
 
@@ -115,9 +114,9 @@ function Projects({ modalHandler }: { modalHandler: ModalHandler }) {
             <Center>
               <Suspense fallback={<CanvasLoader />}>
                 <ProjectDisplay
-                  scale={new Vector3(2)}
-                  position={new Vector3(0, -3, 0)}
-                  rotation={new Euler(0, -0.1, 0)}
+                  scale={2}
+                  position={[0, -3, 0]}
+                  rotation={[0, -0.1, 0]}
                   currTxt={currentProject.image}
                 />
               </Suspense>
