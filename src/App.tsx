@@ -4,6 +4,7 @@ import Home from "./pages/home";
 import ShowCases from "./pages/showcases";
 import { useEffect, useState } from "react";
 import Loader from "./components/Loader";
+import SkillAndServices from "./pages/skillsAndServices";
 
 
 export default function App() {
@@ -27,6 +28,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="welcome-to-my-garage" element={<ShowCases />} />
+          <Route path="skills-and-services" element={<SkillAndServices />} />
         </Routes>
       </QueryClientProvider>
     );

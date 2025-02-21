@@ -472,3 +472,27 @@ export const TECH_STACK_LIST : ITechStack[] =  [
       "source": "jquery"
   }
 ]
+
+export const SERVICES_LIST : string[] = [
+  "Build You A Simple Landing Page App",
+  "Build You A Web Application",
+  "Help You To Host Your Wesbite",
+  "Install Network Interface for Your Home",
+  "Install Network Interface for Your Office",
+  "Create A Server For You",
+  "Create a Simple Thematic Map For You Using QGis",
+  "Create Simple UI/UX For You",
+  "Service Your Laptop",
+  "Change Your Laptop SSD",
+  "Change Your Laptop RAM",
+  "Change Your Laptop NVMe",
+  "Install Windows For Your Laptop/PC",
+  "Install Linux For Your Laptop/PC",
+  "Service Your Android Phone",
+  "Change LCD and Battery of Your Android Phone",
+  "Create A Machine Learning Model",
+  "Help You With Analyze Your Data",
+  "Organize and Entry Your Archive",
+  "Automate Your Workflow With Appscript",
+  "Help You With Your Web3 Project",
+]
